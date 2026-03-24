@@ -42,7 +42,7 @@ export default function Home() {
           </Link>
           <nav className="hidden sm:flex items-center gap-8 text-sm font-medium text-zinc-500">
             <Link href="/" className="hover:text-orange-500 transition-colors">홈</Link>
-            <Link href="#" className="hover:text-orange-500 transition-colors">블로그</Link>
+            <Link href="/blog" className="hover:text-orange-500 transition-colors">블로그</Link>
             <Link href="#" className="hover:text-orange-500 transition-colors">소개</Link>
           </nav>
         </div>
@@ -111,7 +111,7 @@ export default function Home() {
                 </div>
                 <div className="mt-8 pt-6">
                   <Link
-                    href={`/detail/${event.id}`}
+                    href="/blog"
                     className="flex items-center justify-center w-full rounded-2xl bg-zinc-900 py-4 text-sm font-bold text-white transition-all transform hover:bg-orange-500 hover:shadow-lg active:scale-95"
                   >
                     내용 확인하기
@@ -158,7 +158,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Link
-                  href={`/detail/${benefit.id}`}
+                  href="/blog"
                   className="mt-10 flex items-center justify-center gap-2 text-sm font-bold text-white hover:text-green-400 transition-colors"
                 >
                   상세 조건 확인 
