@@ -47,21 +47,21 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-6 py-20">
-        <article className="space-y-12">
+      <main className="mx-auto max-w-4xl px-6 py-20">
+        <article className="space-y-16">
           {/* 상단 정보 */}
-          <div className="space-y-6 text-center">
-            <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-widest text-orange-600">
+          <div className="space-y-8 text-center">
+            <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-orange-600">
               <span>{post.category}</span>
               <span className="h-1 w-1 rounded-full bg-zinc-300" />
               <time>{post.date}</time>
             </div>
-            <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl leading-[1.2]">
+            <h2 className="text-4xl font-extrabold tracking-tight text-zinc-900 sm:text-5xl lg:text-7xl leading-[1.1]">
               {post.title}
             </h2>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-3">
               {post.tags.map((tag) => (
-                <span key={tag} className="inline-flex items-center rounded-lg bg-orange-50 px-2.5 py-1 text-xs font-bold text-orange-600 ring-1 ring-inset ring-orange-100">
+                <span key={tag} className="inline-flex items-center rounded-xl bg-orange-50 px-4 py-1.5 text-xs font-bold text-orange-600 ring-1 ring-inset ring-orange-100">
                   #{tag}
                 </span>
               ))}
@@ -69,14 +69,14 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           {/* 본문 컨텐츠 */}
-          <section className="rounded-[2.5rem] bg-white border border-zinc-100 p-8 sm:p-14 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
+          <section className="rounded-[3rem] bg-white border border-zinc-100 p-8 sm:p-20 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <div className="prose prose-zinc prose-lg max-w-none 
               prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-zinc-900
-              prose-p:text-zinc-600 prose-p:leading-relaxed
-              prose-a:text-orange-500 prose-a:font-bold hover:prose-a:text-orange-600
-              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-6 prose-blockquote:py-1 prose-blockquote:rounded-r-xl
+              prose-p:text-zinc-600 prose-p:leading-[2] prose-p:mb-10 prose-p:tracking-wide
+              prose-a:text-orange-500 prose-a:font-extrabold hover:prose-a:text-orange-600
+              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-8 prose-blockquote:py-2 prose-blockquote:rounded-r-2xl
               prose-strong:text-zinc-900 prose-strong:font-bold
-              prose-img:rounded-3xl prose-img:shadow-lg">
+              prose-img:rounded-[2.5rem] prose-img:shadow-2xl">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {post.content || ""}
               </ReactMarkdown>
