@@ -47,10 +47,10 @@ export default async function PostPage({ params }: PostPageProps) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-4xl px-6 py-20">
+      <main className="mx-auto max-w-5xl px-6 py-20">
         <article className="space-y-16">
           {/* 상단 정보 */}
-          <div className="space-y-8 text-center">
+          <div className="space-y-8 text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-orange-600">
               <span>{post.category}</span>
               <span className="h-1 w-1 rounded-full bg-zinc-300" />
@@ -69,12 +69,12 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           {/* 본문 컨텐츠 */}
-          <section className="rounded-[3rem] bg-white border border-zinc-100 p-8 sm:p-24 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-            <div className="prose prose-zinc prose-xl max-w-none 
+          <section className="rounded-[3rem] bg-white border border-zinc-100 p-8 sm:px-16 sm:py-20 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <div className="prose prose-zinc max-w-none text-[17px]
               prose-headings:font-bold prose-headings:tracking-[-0.03em] prose-headings:text-zinc-900
-              prose-p:text-zinc-600 prose-p:leading-[2.2] prose-p:mb-16 prose-p:tracking-[-0.01em]
+              prose-p:text-zinc-700 prose-p:leading-[1.9] prose-p:mb-12 prose-p:tracking-[-0.01em]
               prose-a:text-orange-500 prose-a:font-extrabold hover:prose-a:text-orange-600
-              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-10 prose-blockquote:py-4 prose-blockquote:rounded-r-2xl
+              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-8 prose-blockquote:py-3 prose-blockquote:rounded-r-2xl
               prose-strong:text-zinc-900 prose-strong:font-bold
               prose-img:rounded-[2.5rem] prose-img:shadow-2xl">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
