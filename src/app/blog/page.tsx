@@ -45,43 +45,64 @@ export default function BlogPage() {
         </section>
 
         {/* 블로그 포스트 리스트 */}
-        <section className="space-y-12">
+        <section className="space-y-16">
           {allPostsData.length > 0 ? (
-            <div className="grid gap-x-8 gap-y-16 md:grid-cols-2">
+            <div className="flex flex-col gap-16">
               {allPostsData.map((post) => (
-                <article key={post.slug} className="group relative flex flex-col items-start gap-6">
-                  <div className="relative w-full aspect-[16/9] overflow-hidden rounded-3xl bg-zinc-100 transition-all duration-500 group-hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.15)] group-hover:-translate-y-1">
-                    {/* Placeholder for post thumbnail or just a nice gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-white to-rose-50/50" />
-                    <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-20 transition-opacity group-hover:opacity-40">
-                      📖
-                    </div>
+                <article key={post.slug} className="group relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+                  <div className="relative w-full md:w-80 shrink-0 aspect-[16/10] md:aspect-[4/3] overflow-hidden rounded-[2.5rem] bg-zinc-100 transition-all duration-500 group-hover:shadow-[0_30px_60px_-15px_rgba(249,115,22,0.2)] group-hover:-translate-y-1">
+                    {post.image ? (
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                    ) : (
+                        <>
+                          <div className="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-white to-rose-50/50" />
+                          <div className="absolute inset-0 flex items-center justify-center text-5xl opacity-30 transition-opacity group-hover:opacity-50">
+                            ✨
+                          </div>
+                        </>
+                    )}
                   </div>
                   
-                  <div className="space-y-4 w-full">
+                  <div className="space-y-5 flex-1">
                     <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-orange-600">
-                      <span>{post.category}</span>
-                      <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                      <span className="bg-orange-50 px-2 py-0.5 rounded-md">{post.category}</span>
                       <time className="text-zinc-400">{post.date}</time>
                     </div>
                     
-                    <h3 className="text-2xl font-bold leading-tight text-zinc-900 group-hover:text-orange-500 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        <span className="absolute inset-0" />
-                        {post.title}
-                      </Link>
-                    </h3>
+                    <div className="space-y-3">
+                      <h3 className="text-2xl font-extrabold leading-tight text-zinc-900 group-hover:text-orange-500 transition-colors sm:text-3xl">
+                        <Link href={`/blog/${post.slug}`}>
+                          {post.title}
+                        </Link>
+                      </h3>
+                      
+                      <p className="text-lg text-zinc-500 leading-relaxed line-clamp-2 font-medium">
+                        {post.summary}
+                      </p>
+                    </div>
                     
-                    <p className="text-base text-zinc-500 leading-relaxed line-clamp-2 font-medium">
-                      {post.summary}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 pt-2">
+                    <div className="flex flex-wrap gap-2">
                       {post.tags.map((tag) => (
-                        <span key={tag} className="inline-flex items-center rounded-lg bg-zinc-50 px-2.5 py-1 text-xs font-medium text-zinc-500 ring-1 ring-inset ring-zinc-100">
+                        <span key={tag} className="inline-flex items-center rounded-xl bg-white px-3 py-1.5 text-xs font-bold text-zinc-500 ring-1 ring-inset ring-zinc-100 shadow-sm transition-all group-hover:ring-orange-100 group-hover:bg-orange-50/30">
                           #{tag}
                         </span>
                       ))}
+                    </div>
+
+                    <div className="pt-2">
+                      <Link 
+                        href={`/blog/${post.slug}`}
+                        className="inline-flex items-center gap-2 text-sm font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                      >
+                        자세히 보기
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 </article>

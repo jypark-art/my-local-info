@@ -64,6 +64,7 @@ date: ${new Date().toISOString().split('T')[0]}
 summary: (한 줄 요약)
 category: 정보
 tags: [태그1, 태그2, 태그3]
+image: (교육/미래기술이면 https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800, 생활정보면 https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800, 행사/축제면 https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800 중 선택하거나 유사한 Unsplash URL)
 ---
 
 (본문: 800자 이상, 친근한 블로그 톤, 추천 이유 3가지 포함, 신청 방법 안내)

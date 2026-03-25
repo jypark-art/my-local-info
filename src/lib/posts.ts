@@ -11,6 +11,7 @@ export interface PostData {
   summary: string;
   category: string;
   tags: string[];
+  image?: string;
   content?: string;
 }
 
