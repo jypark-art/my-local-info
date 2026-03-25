@@ -69,12 +69,12 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           {/* 본문 컨텐츠 */}
-          <section className="rounded-[3rem] bg-white border border-zinc-100 p-8 sm:p-20 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-            <div className="prose prose-zinc prose-lg max-w-none 
-              prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-zinc-900
-              prose-p:text-zinc-600 prose-p:leading-[2] prose-p:mb-10 prose-p:tracking-wide
+          <section className="rounded-[3rem] bg-white border border-zinc-100 p-8 sm:p-24 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <div className="prose prose-zinc prose-xl max-w-none 
+              prose-headings:font-bold prose-headings:tracking-[-0.03em] prose-headings:text-zinc-900
+              prose-p:text-zinc-600 prose-p:leading-[2.2] prose-p:mb-16 prose-p:tracking-[-0.01em]
               prose-a:text-orange-500 prose-a:font-extrabold hover:prose-a:text-orange-600
-              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-8 prose-blockquote:py-2 prose-blockquote:rounded-r-2xl
+              prose-blockquote:border-l-orange-500 prose-blockquote:bg-orange-50/50 prose-blockquote:px-10 prose-blockquote:py-4 prose-blockquote:rounded-r-2xl
               prose-strong:text-zinc-900 prose-strong:font-bold
               prose-img:rounded-[2.5rem] prose-img:shadow-2xl">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
